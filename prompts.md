@@ -28,3 +28,10 @@ Assume that implementing an endpoint to retrieve a single item from the database
 The User Registration part was developed by senior and middle developers. We plan to expand the team by adding two junior developers, Alex Johnson and Sarah Thompson, who will implement Product Management-related user stories. Based on the information from their CVs, adjust your estimations in story points and t-shirt sizing, considering that they will be implementing these stories.
 ```
 
+```
+Will the provided estimations be affected by the metrics in the Metrics Document?
+```
+
+```
+Adjust the story point estimations for two junior developers, taking into account the project's metrics.
+```
