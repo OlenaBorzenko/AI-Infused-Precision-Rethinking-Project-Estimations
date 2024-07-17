@@ -21,6 +21,9 @@ Help me estimate user stories related to Product Management. There are two stori
 
 ```
 Can you provide me an estimation in story points for the following scope?
+
+Story points are a unit of measure used in Agile project management to estimate the effort required to complete a task. They represent the relative complexity and effort needed for a task, and are typically assigned using values such as 0.5, 1, 2, 3, 5, 8, 13, 20, 40, and 100.
+
 Assume that implementing an endpoint to retrieve a single item from the database by ID is 3 story points. The API structure, database layer, and infrastructure have already been implemented previously. Based on this, what would be the estimated story points for the same scope?
 ```
 
