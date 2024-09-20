@@ -1,0 +1,55 @@
+{
+  "description": "Skillset to split documents and generate embeddings",
+	"name": "ai-infused-skill-set",
+  "skills": [
+		{
+      "@odata.type": "#Microsoft.Skills.Text.SplitSkill",
+      "name": "#split-skill",
+      "description": "Split documents into smaller chunks",
+      "context": "/document",
+      "textSplitMode": "sentences",
+			"inputs": [
+    		{
+      		"name": "text",
+      		"source": "/document/content"
+    		},
+    		{
+      		"name": "languageCode",
+      		"source": "/document/language"
+    		}
+  		],
+      "outputs": [
+        {
+          "name": "textItems",
+          "targetName": "chunks"
+        }
+      ]
+    },
+		{
+      "@odata.type": "#Microsoft.Skills.Text.AzureOpenAIEmbeddingSkill",
+      "resourceUri": "",
+      "apiKey": "",
+			"modelName": "text-embedding-ada-002",
+      "deploymentId": "text-embedding-ada-002",
+      "name": "#embedding-skill",
+      "description": "Generate embeddings for text",
+      "context": "/document/chunks/*",
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/chunks/*/text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "embedding",
+          "targetName": "embedding"
+        }
+      ]
+    }
+	],
+  "cognitiveServices": {
+    "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
+    "key": ""
+  }
+}
